@@ -8,7 +8,10 @@
         </style>
     </head>
     <body>
-        <?php     
+        <?php 
+        $name = $password = $nhaplai = ''   ; 
+        $checkMale = $checkFemale = $checkOther = '';
+        $checkDn = $checkHcm = $checkHn = $checkHp = '';
          if(isset($_POST['submit'])){   
             $name = $_POST['name'];
             $errName = '';
@@ -20,8 +23,8 @@
             $errorNhaplai = '';
             $gender = $_POST['gender'];
             $errGender = '';
-            $quequan = $_POST['quequan'];
-            $errQuequan = '';
+            $city = $_POST['city'];
+            $errCity = '';
             $mota = $_POST['mota'];
             $avatar = $_POST['avatar'];
             $errAvatar = '';
@@ -44,10 +47,33 @@
             if($gender==''){
                $errGender = 'please input your gender';
                $check = false;
+            }else{
+                if($gender=='male'){
+                    $checkMale="checked";
+                }
+                if($gender=='female'){
+                    $checkFemale="checked";
+                }
+                if($gender=='Other'){
+                    $checkOther="checked";
+                }
             }
-            if($quequan==''){
-                $errQuequan = 'vui long dien vao que quan';
+            if($city==''){
+                $errCity = 'vui long dien vao City';
                 $check = false;
+            }else{
+                if($city== 'dn'){
+                    $checkDn = "selected";
+                }
+                if($city== 'hn'){
+                    $checkHn = "selected";
+                }
+                if($city== 'hp'){
+                    $checkHp = "selected";
+                }
+                if($city== 'hcm'){
+                    $checkHcm = "selected";
+                }
             }
             if($mota==''){
                 $check = false;
@@ -67,7 +93,7 @@
                 echo '<br>';
                 echo 'Gender:'.$gender;
                 echo '<br>';
-                echo 'Quê Quán :'.$quequan;
+                echo 'Quê Quán :'.$city;
                 echo '<br>';
                 echo 'Mô Tả :'.$mota;
                 echo '<br>';
@@ -76,27 +102,28 @@
          }
         ?>
         <h1>Register Form</h1>
-        <form method="POST" action="#" name="RegisterForm">
-        <p>Ho va Ten :<input type="text" name="name"><span class="error"><?php echo   $errName  ?></span></p>
-        <p>Email :<input type="text" name="email"><span class="error"></span><?php echo $errEmail ?></p>
-        <p>Mat Khau :<input type="password" name="password"><span class="error"><?php echo  $errPass ?></span></p>
-        <p>Nhap Lai Mat Khau :<input type="password" name="nhaplai"><span class="error"><?php echo $errorNhaplai  ?></span></p>
+        <form method="POST" action="#" name="RegisterForm" >
+        <p>Ho va Ten :<input type="text" name="name" value='<?php echo $name; ?>'><span class="error" ><?php echo   $errName  ?></span></p>
+        <p>Email :<input type="text" name="email" value='<?php echo $email; ?>'><span class="error"><?php echo $errEmail ?></span></p>
+        <p>Mat Khau :<input type="password" name="password" value='<?php echo $password; ?>'><span class="error"><?php echo  $errPass ?></span></p>
+        <p>Nhap Lai Mat Khau :<input type="password" name="nhaplai" ><span class="error"><?php echo $errorNhaplai  ?></span></p>
         <p>Gioi Tinh :
-            <input type="radio" name="gender" value="male"> Male<br>
-            <input type="radio" name="gender" value="female"> Female<br>
-            <input type="radio" name="gender" value="other"> Other<br>
+            <input type="radio" name="gender" value="male" <?php echo $checkMale;?>> Male<br>
+            <input type="radio" name="gender" value="female" <?php echo $checkFemale;?>> Female<br>
+            <input type="radio" name="gender" value="other"<?php echo $checkOther;?>> Other<br>
         <span class="error"><?php echo $errGender  ?></span></p>
         <p>Que Quan :
-        <select name='quequan'>
-            <option value="dn">Da Nang</option>
-            <option value="hcm">Ho Chi Minh</option>
-            <option value="hn">Ha Noi</option>
-            <option value="hp">Hai Phong</option>
+        <select name='city'>
+            <option value="Tp">City</option>
+            <option value="dn" <?php echo $checkDn; ?>>Da Nang</option>
+            <option value="hcm"<?php echo $checkHcm; ?>>Ho Chi Minh</option>
+            <option value="hn"<?php echo $checkHn ; ?>>Ha Noi</option>
+            <option value="hp"<?php echo $checkHp ; ?>>Hai Phong</option>
         </select>
-        <span class="error"><?php echo $errQuequan  ?></span></p>
+        <span class="error"><?php echo $errCity  ?></span></p>
         <p>Thong Tin mo ta ban than :<textarea name="mota" ></textarea >
         <span class="error"></span></p>
-        <p>Avatar :<input type="file" name="avatar">
+        <p>Avatar :<input type="file" name="avatar" id="avatar">
         <span class="error"><?php echo $errAvatar ?></span></p>
         <input type="submit" name="submit" value="Register">
         </form>
