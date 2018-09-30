@@ -11,7 +11,7 @@ if(isset($_POST['ok_upload']))
 {
  $num=$_POST['file'];
  echo "<h3>Chúc Bạn Đã Thành Công!!!</h3>";
- $conn = @mysqli_connect("localhost", "root", "", "test");
+    $conn = @mysqli_connect("localhost", "root", "", "test");
  for($i=0; $i< $num; $i++)
  {
   move_uploaded_file($_FILES['img']['tmp_name'][$i],"data/".$_FILES['img']['name'][$i]);
