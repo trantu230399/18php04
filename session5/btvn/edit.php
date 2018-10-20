@@ -18,7 +18,7 @@
             $name = $_POST['name']; 
             $price = $_POST['price']; 
             $description = $_POST['description'];   
-            $sql = "update user set name='$name',price = '$price',description = '$description' where id ='$id'";
+            $sql = "update user set  name='$name',price = '$price',description = '$description' where id ='$id'";
             $conn->query($sql); 
             header('Location:list_user.php');
         }

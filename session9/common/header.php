@@ -1,12 +1,11 @@
-<?php ob_start();?>
+﻿<?php ob_start();?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="shortcut icon"  href="images/fb1.png">
-  <title>TVAT</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
+  <link rel="shortcut icon"  href="dist/img/fb1.png">
+  <title>TVAT</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -42,9 +41,9 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>TVAT</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>TVAT</b></span>
+      <span class="logo-lg"><b>Trần Võ Anh Tú</b></span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -59,17 +58,17 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="images/tvat.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"> Trần Võ Anh Tú</span>
+              <img src="dist/img/tvat.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Hi. <b><?php echo $_SESSION['login'];?></b></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="images/tvat.jpg" class="img-circle" alt="User Image">
+                <img src="dist/img/tvat.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  Trần Võ Anh Tú
+                  <small>Đẹp Trai Quá Đi</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -93,7 +92,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="index.php?action=logout" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="admin.php?action=logout" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
