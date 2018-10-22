@@ -9,7 +9,7 @@
 			<div class="row">
 					<div class="col-md-5 col-sm-12 col-xs-12">
 						<div class="product-image"> 
-							<a href="display.php?id=<?php echo $id; ?>"><img src="dist/img/<?php echo $row['image']?>" class="img-responsive"> </a>
+							<img src="dist/img/<?php echo $row['image']?>" class="img-responsive"> 
 							<span class="tag2 hot">
 								HOT
 							</span> 
@@ -38,7 +38,7 @@
 						<div class="row">
 							<div class="col-md-12"> 
 								<a href="#" class="btn btn-danger">Add to cart</a>
-	                            <a href="#" class="btn btn-info">Detail</a>
+	                            <a href="index.php?action=product_detail&id=<?php echo $row['id']?>" class="btn btn-info">Detail</a>
 							</div>
 						</div>
 					</div>

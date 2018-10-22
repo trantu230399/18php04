@@ -8,21 +8,16 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" name="" method="post" action="#">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Product Name</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Product Name">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Price</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Price">
+                  <label for="exampleInputEmail1"> Name</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Product Name" name="name">
                 </div>
               </div>
               <!-- /.box-body -->
-
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">ADD PRODUCT</button>
+                <button type="submit" class="btn btn-primary" name="add_product">ADD PRODUCT</button>
               </div>
             </form>
           </div>

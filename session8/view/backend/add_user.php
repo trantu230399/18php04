@@ -11,10 +11,6 @@
             <form role="form" action="admin.php?action=add_user" method="post" enctype='multipart/form-data'>
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputName">Name</label>
-                  <input type="text" class="form-control" placeholder="Enter name" name="name">
-                </div>
-                <div class="form-group">
                   <label for="exampleInputUsername">Username</label>
                   <input type="text" class="form-control" placeholder="Enter username" name="username">
                 </div>

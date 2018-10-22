@@ -1,8 +1,4 @@
-<?php
-include 'text.php';
-$sql = "select * from session6";
-$result =  $conn->query($sql);   
-?>
+
 <div class="row">
         <div class="col-md-6">
           <div class="box">
@@ -14,21 +10,24 @@ $result =  $conn->query($sql);
               <table class="table table-bordered">
                 <tr>
                   <th style="width: 10px">ID</th>
-                  <th>Emailk</th>
-                  <th>Passworld</th>
+                  <th>Username</th>
+                  <th>Image</th>
                   <th style="width: 40px">Label</th>
                 </tr>
-                <?php
-if($result->num_rows > 0){
-  while($row = $result ->fetch_assoc()){
-     $id = $row['id'];
-     $email = $row['email'];
-     $password = $row['password'];
-     echo '<tr>'.'<td>'.$id.'</td>'.'<td>'.$email.'</td>'.'<td>'.$password.'</td>'.'<td>'."<a href = 'view/edit_user.php?id=$id'>".'<button type="button" class="btn btn-block btn-info">'.'Edit'.'</button>'.'</a>'.'</td>'.'<td>'."<a href='view/delete_user.php?id=$id'>".'<button  type="button" class="btn btn-block btn-danger">'.'DELETE'.'</button>'.'</a>'.'</td>'.'</tr>';
-  }
-}
-
-?>
+                <?php while ($row = $listUser->fetch_assoc()) {
+                   $id = $row['id'];  
+                   $unsername = $row['username'];               
+                  ?>
+                  <tr>
+                    <td><?php echo $row['id']?></td>
+                    <td><?php echo $row['username']?></td>
+                    <td></td>
+                    <td>
+                    <a href="admin.php?action=edit_user&id=<?php echo $id;?>"><button type="button" class="btn btn-block btn-info">EDIT</button></a> 
+                    <a href="admin.php?action=delete_user&id=<?php echo $id;?>"><button type="button" class="btn btn-block btn-danger">DELETE</button></a>
+                    </td>
+                  </tr>
+                <?php }?>
               </table>
             </div>
             <!-- /.box-body -->

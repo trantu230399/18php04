@@ -18,9 +18,9 @@
     <a href="index.php?action=home&category_id=1">Apple</a>
   |	<a href="index.php?action=home&category_id=2">Samsung</a>
   |	<a href="index.php?action=home&category_id=3">Oppo</a>
-  <a href="index.php?action=home&category_id=4">Xiaomi</a>
-  <a href="index.php?action=home&category_id=5">Sony</a>
-  <a href="index.php?action=home&category_id=6">Vivo</a>
+  | <a href="index.php?action=home&category_id=4">Xiaomi</a>
+  | <a href="index.php?action=home&category_id=5">Sony</a>
+  | <a href="index.php?action=home&category_id=6">Vivo</a>
 	<?php 
       $controller = new FrontendController();
       $controller->handleRequest();

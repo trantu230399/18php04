@@ -54,5 +54,10 @@
 			}
 			return $select;
 		}
+		function Detail($id){
+			$sql = "SELECT * FROM products WHERE id = $id";
+			$result = mysqli_query($this->conn, $sql);
+			return $result;
+		}
 	}
 ?>
