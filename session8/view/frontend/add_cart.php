@@ -1,24 +1,4 @@
-<style>
-h1{
-    overflow: hidden;
-    font-size: 24px;
-    color: #333;
-    line-height: 40px;
-}
-.image{
-    display: block;
-    height: auto;
-    margin: auto;
-    cursor: pointer;
-    max-width: 100%;
-    float: left;
-}
-.price{
-    margin-left :200px;
-    color: #e10c00;
-    font-size: 24px;             
-}
-</style>
+<h1 class="box-title" >Giỏ Hàng</h1>
 <?php
     while($row = $listDetail ->fetch_assoc()){
        $id = $row['id'];
@@ -39,11 +19,23 @@ h1{
             <img src = "dist/img/<?php echo $image; ?>" class ="image" >
         </div>
         <div class ="area_price">
-            <strong class="price"><?php echo $row['price'];?>đ</strong>
+           Price: <strong class="price"><?php echo $row['price'];?>đ</strong>
         </div>
     </div>
        <?php }
 ?>
-
-
+<div class="row">
+            <form role="form" action="" method="post">
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary" name="add" id='click' >ADD </button>
+              </div>
+            </form>
+</div>
+<script>
+$( document ).ready(function(){
+    $('#click').click(function(){
+      alert('tvat1');
+  })
+})
  
+</script>

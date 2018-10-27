@@ -37,7 +37,7 @@
 					<div class="product-info smart-form">
 						<div class="row">
 							<div class="col-md-12"> 
-								<a href="#" class="btn btn-danger">Add to cart</a>
+								<a href="index.php?action=add_cart&id=<?php echo $row['id']?>" class="btn btn-danger">Add to cart</a>
 	                            <a href="index.php?action=product_detail&id=<?php echo $row['id']?>" class="btn btn-info">Detail</a>
 							</div>
 						</div>

@@ -59,5 +59,13 @@
 			$result = mysqli_query($this->conn, $sql);
 			return $result;
 		}
+		function Dangki($username,$password){
+			$sql = "INSERT INTO cart ( user_id, password) VALUES ( '$username', '$password')";
+			return mysqli_query($this->conn, $sql);
+		}
+		function ADD($id,$cart_id){
+			$sql = "INSERT INTO cart_details ( cart_id, product_id) VALUES ( '$cart_id', '$id')";
+			return mysqli_query($this->conn, $sql);
+		}
 	}
 ?>
