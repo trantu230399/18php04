@@ -9,8 +9,9 @@
 			$sql = "INSERT INTO users (name, username, password,images,url) VALUES ('$name', '$username', '$password','$images','$url')";
 			return mysqli_query($this->conn, $sql);
 		}
-		function getListUser(){
-			$sql = "SELECT * FROM users";
+		function getListUser($limit,$page){
+			$start = ($page -1)* $limit;
+			$sql = "SELECT * FROM users LIMIT $start,$limit";
 			$result = mysqli_query($this->conn, $sql);
 			return $result;
 		}
@@ -31,6 +32,11 @@
 		function checkLogin($username, $password) {
 			$sql = "SELECT * FROM users WHERE username = '$username'
 			AND password = '$password'";
+			$result = mysqli_query($this->conn, $sql);
+			return $result->num_rows;
+		}
+		function getTotalUser(){
+			$sql = "SELECT id FROM users";
 			$result = mysqli_query($this->conn, $sql);
 			return $result->num_rows;
 		}

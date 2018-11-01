@@ -50,10 +50,15 @@
 						$detail = new Product();
 						$listDetail =  $detail->Detail($id);
 					if(isset($_POST['add'])){
-						$id = $_GET['id'];
-						$cart_id = 1;
+					   $id = $_GET['id'];
+					   $_SESSION['cart'] = array("'$id"=>array(
+						  'name' => "",
+					   )
+					);
 					   $add =new Product();
 					   $add -> ADD($id,$cart_id);
+					   var_dump( $_SESSION['cart']);
+					   exit();
 					}
 						
 						include 'view/frontend/add_cart.php';

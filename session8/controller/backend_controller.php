@@ -31,8 +31,12 @@
 					if(!isset($_SESSION['login'])){
 						header("Location: login.php");
 					}
+					$page = isset($_GET['page'])?$_GET['page']:1;
+					$limit = 5;
 					$userModel = new User();
-					$listUser =$userModel->getListUser();
+					$listUser =$userModel->getListUser($limit,$page);
+					$totalUser = $userModel->getTotalUser();
+					$numberPage = ceil($totalUser/$limit);
 					//view du lieu
 					include 'view/backend/list_user.php';
 					break;
@@ -94,8 +98,12 @@
 					if(!isset($_SESSION['login'])){
 						header("Location: login.php");
 					}
-					$productModel = new Product();
-					$listProduct =$productModel->getListProductAdmin();
+					$page = isset($_GET['page'])?$_GET['page']:1;
+					$limit = 3;
+					$productModel = new Product($page,$limit);
+					$listProduct =$productModel->getListProductAdmin($page,$limit);
+					$totalProduct = $productModel -> getTotalProduct();
+					$numberPages = ceil($totalProduct/$limit);
 					//view du lieu
 					include 'view/backend/list_product.php';
 					break;

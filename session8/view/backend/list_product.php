@@ -1,11 +1,5 @@
 <style type="text/css">
-table {
-   text-align : center;
-}
-th{
-  text-align : center;
-  color : yellow;
-}
+
   img{
     height: 200px;
   }
@@ -54,6 +48,10 @@ th{
                   </tr>
                 <?php }?>
               </table>
+              Paging: 
+              <?php for ($i = 1; $i <= $numberPages; $i++) {?>
+                <a href="admin.php?action=list_product&page=<?php echo $i?>"> <?php echo $i?> </a>
+              <?php }?>
             </div>
             <!-- /.box-body -->
           </div>

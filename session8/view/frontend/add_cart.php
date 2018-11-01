@@ -31,11 +31,3 @@
               </div>
             </form>
 </div>
-<script>
-$( document ).ready(function(){
-    $('#click').click(function(){
-      alert('tvat1');
-  })
-})
- 
-</script>

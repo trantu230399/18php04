@@ -39,6 +39,10 @@
                   </tr>
                 <?php }?>
               </table>
+              Paging: 
+              <?php for ($i = 1; $i <= $numberPage; $i++) {?>
+                <a href="admin.php?action=list_user&page=<?php echo $i?>"> <?php echo $i?> </a>
+              <?php }?>
             </div>
             <!-- /.box-body -->
           </div>

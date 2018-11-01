@@ -22,9 +22,10 @@
 			$result = mysqli_query($this->conn, $sql);
 			return $result;
 		}
-		function getListProductAdmin() {
+		function getListProductAdmin($page,$limit) {
+			$start = ($page - 1) * $limit;
 			$sql = "SELECT products.id, products.name, products.price, products.image, product_categories.name AS category_name  FROM products INNER JOIN product_categories ON 
-			products.product_category_id = product_categories.id";
+			products.product_category_id = product_categories.id LIMIT $start,$limit";
 			$result = mysqli_query($this->conn, $sql);
 			return $result;
 		}
@@ -66,6 +67,11 @@
 		function ADD($id,$cart_id){
 			$sql = "INSERT INTO cart_details ( cart_id, product_id) VALUES ( '$cart_id', '$id')";
 			return mysqli_query($this->conn, $sql);
+		}
+		function getTotalProduct(){
+			$sql = "SELECT id FROM products";
+			$result = mysqli_query($this->conn, $sql);
+			return $result->num_rows;
 		}
 	}
 ?>
