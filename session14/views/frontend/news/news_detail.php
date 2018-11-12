@@ -26,10 +26,8 @@
 	</form>	
 		<a href="#">Liked</a>
 		<span><?php  while ($row = $ListLike->fetch_assoc()) {
-			$id = $row['id'];
-				for($i=1 ; $i <= $id	; $i++){
-					echo "so nguoi da like la" . $i;
-				}
+			$id = $row['user_id'];
+			echo "so nguoi da like". $id;
 		}?>
 		</span>
 	</div>
