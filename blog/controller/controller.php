@@ -1,5 +1,6 @@
 <?php 
 include 'model/user.php';
+include 'config/connectdb.php';
 	class Controller {
 		/*
 			* Kiem tra request tu view
@@ -19,7 +20,7 @@ include 'model/user.php';
 						$role = $_POST['role'];
 						$password = $_POST['password'];
 						$userModel = new User();
-						$userModel->InsertUser($name, $username, $password,$images,$url);
+						$userModel->InsertUser($name, $username,$role, $password,$images,$url);
 					}
 					//view du lieu
 					include 'view/add_user.php';
