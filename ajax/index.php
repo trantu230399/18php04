@@ -24,8 +24,7 @@
                     }
                 })
             })
-            $('#json-click').click(function()
-            {
+            $('#json-click').click(function(){
                 $.ajax({
                     url : 'result_1.php',
                     type : 'get',

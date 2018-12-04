@@ -4,10 +4,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo $_SESSION['url'];?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><?php echo $_SESSION['login'];?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -34,21 +34,21 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="admin.php?action=add_user""><i class="fa fa-circle-o"></i> Add user</a></li>
-            <li class="active"><a href="admin.php?action=list_user""><i class="fa fa-circle-o"></i> List users</a></li>
+            <li><a href="admin.php?action=add_user"><i class="fa fa-circle-o"></i> Add user</a></li>
+            <li class="active"><a href="admin.php?action=list_user"><i class="fa fa-circle-o"></i> List users</a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
             <i class="fa  fa-cubes"></i>
-            <span>Product</span>
+            <span>News</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="admin.php?action=add_product""><i class="fa fa-circle-o"></i> Add product</a></li>
-            <li><a href="admin.php?action=list_product""><i class="fa fa-circle-o"></i> List products</a></li>
+            <li><a href="admin.php?action=add_news"><i class="fa fa-circle-o"></i> Add News</a></li>
+            <li><a href="admin.php?action=list_news"><i class="fa fa-circle-o"></i> List News</a></li>
           </ul>
         </li>
       </ul>

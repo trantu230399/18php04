@@ -1,0 +1,31 @@
+#scroll_news_hot{
+    border: 1px solid #ddd;
+	height : 200px;
+	}
+	.imagess{
+		float: left;
+		max-width: 100%;
+		width:250px;
+		height: 190px;
+		margin-top:-60px;
+	}
+	.news_list{
+		margin: 20px 300px 0px 300px;
+	}
+	.list_title{
+		text-align: center;
+		margin-left:250px;
+	}
+	.head_news{
+		width:220px;
+		border-top:3px solid red;
+	}
+	.head_news a{	
+		font-size: 25px;
+        color: #ea0000;	
+    }.decription{
+        font-size: 20px;
+	}
+	.f14{
+		font-size: 15px;
+	}

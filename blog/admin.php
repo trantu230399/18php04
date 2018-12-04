@@ -1,5 +1,6 @@
 <?php 
-  include 'controller/controller.php';
+session_start();
+  include 'controller/backend_controller.php';
   include 'common/header.php';?>
   <!-- Left side column. contains the logo and sidebar -->
  
@@ -21,8 +22,9 @@
     <!-- Main content -->
     <section class="content">
       <!-- Info boxes -->
-         <?php 
+         <?php     
           $controller = new Controller();
+          $controller->checkLogin();
           $controller->handleRequest();
         ?>
       <!-- /.row -->

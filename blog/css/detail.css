@@ -1,0 +1,55 @@
+.grlf{
+    width: 670px;
+    margin-left:200px;
+    margin-top:15px
+}
+.breakcrum {
+    color: #aaa;
+    line-height: 24px;
+    margin: 6px;
+}
+.breakcrum a {
+    color: #444;
+    display: inline;
+    padding: 0 5px;
+}
+.ncont{
+    display: block;
+    font-size: 11pt;
+    line-height: 1.5em;
+    width: 480px;
+    text-align: justify;
+}
+.details .tit {
+    color: #222;
+    font-size: 27px;
+    font-weight: normal;
+    line-height: 36px;
+    margin: 0;
+    padding: 5px;
+    text-align: left;
+}
+.period {
+    color: #888;
+    font-size: 12px;
+}
+.auth {
+    border-bottom: solid 1px #ccc;
+    color: #666;
+    display: block;
+    line-height: 30px;
+    margin: 5px 0 0 40px;
+}
+.thumins {
+    color: #555;
+    font-size: 13px;
+    font-style: italic;
+    line-height: 18px;
+    text-align: center;
+    margin: 5px 0;
+}
+.images{
+    display: block;
+    max-width: 100%;
+    margin: auto;
+}

@@ -13,7 +13,7 @@ if(count($listNews)){
 			</a>
 		</div>
 		<div class="des_news">
-			<?php echo $row['description']?>
+			<?php echo $row['decription']?>
 		</div>
 	</div>
 <?php }

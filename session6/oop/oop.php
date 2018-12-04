@@ -29,5 +29,6 @@ class student extends user{
 
  $student = new student();
  $student -> register();
+ $student -> delete();
 // $student -> delete();
 ?>
