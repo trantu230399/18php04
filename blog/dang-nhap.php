@@ -34,7 +34,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="admin.php?action=login" method="post">
+    <form action="index.php?action=login" method="post">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="Username" name="username">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -46,7 +46,7 @@
       <div class="row">
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat" name="login">Sign In</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat" name="dang-nhap">Sign In</button>
         </div>
         <div class="social-auth-links text-center">
       <p>- OR -</p>

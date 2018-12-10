@@ -2,6 +2,7 @@
 	include 'config/connectdb.php';
 	include 'model/user.php';
 	include 'model/news.php';
+	include 'model/comment.php';
 	class FrontendController {
 		function handleRequest(){
 			$action = isset($_GET['action'])?$_GET['action']:'home';
@@ -21,20 +22,59 @@
 				$numberPage = ceil($totalNews/$limit);
 				include 'view/frontend/home.php';
 				break;
+				//
 			case 'news_detail':
+				//phan trang cho comment
+				$page = isset($_GET['page'])?$_GET['page']:1;
+				$limit = 3;
+				//show tin tuc
 				$id = $_REQUEST['id'];
 				$detail = new News();
 				$listDetail = $detail->GetDetail($id);
+				$comment = new Comment();
+				$listComment = $comment->ListComment($id,$limit,$page);
+				$totalComment = $comment->getTotalComment($id);
+				$numberPage = ceil($totalComment/$limit);
 				include 'view/frontend/detail.php';
 				break;
+				//phan comment
+			case 'news_comment':	
+					//ktra da login chua
+				if (isset($_SESSION['dang-nhap'])) {
+					$user = $_SESSION['dang-nhap'];
+					$id = $_GET['id'];
+					if(isset($_POST['comment'])){
+						$content = $_POST['content'];
+						$detail = new Comment();
+						$detail->SaveComment($id,$content,$user);
+						header("Location:index.php?action=news_detail&id=$id");
+					}	
+				}else{
+					header("Location:dang-nhap.php");
+				}
+				break;
+				// phan login de comment
+			case 'login':
+				if(isset($_POST['dang-nhap'])){
+					$username = $_POST['username'];
+					$password = $_POST['password'];
+					$userModel = new Comment();
+					$checkLogin = $userModel->checkLogin($username,$password);
+						if($checkLogin){
+							$_SESSION['dang-nhap']=$username;
+							header("Location:index.php");
+						}else{
+							header ("Location:dang-nhap.php");
+						}
+				}	
+				break;
 			case 'list_clb':
-				echo "abc";
+				include 'text.html';
 				break;		
 			default:
 					# code...
 				break;
 			}
-			
 		}
 	}
 ?>

@@ -10,7 +10,7 @@
 			switch ($action) {
 				case 'home':
 					//Gia su da login bang user 2
-					$_SESSION['login']['user_id'] = 2;
+					// $_SESSION['login']['user_id'] = 2;
 					$newsModel = new News();
 					$listNews = $newsModel->getListNews();
 					include 'views/frontend/news/news_list.php';
@@ -39,6 +39,7 @@
 						header("Location: index.php?action=news_detail&id=$news_id");
 						}
 					}
+						break;
 				case 'news_comment':
 					if (isset($_SESSION['login'])) {
 						$user_id = $_SESSION['login']['user_id'];
@@ -50,6 +51,7 @@
 					} else {
 						header("Location: index.php?action=login");
 					}
+						break;
 				case 'login':
 						include 'views/login.php';
 						break;

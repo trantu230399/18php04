@@ -178,6 +178,7 @@
 						$checkLogin = $userModel->checkLogin($username, $password);
 						if($checkLogin) {
 							$_SESSION['login'] = $username;
+							
 							header("Location: admin.php?action=list_user");
 						} else {
 							header("Location: login.php");

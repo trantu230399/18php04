@@ -34,4 +34,42 @@ while ($row =$listDetail->fetch_assoc()){
 <?php   
 }
 ?>
-</div>
+<div id="news_comment">
+    <div class="comment">
+            <form action="index.php?action=news_comment&id=<?php echo $stt;?>" method='post'>
+                    <div class="form-group">
+                    <label for="exampleInputPassword1">Phần Comment</label>
+                    <textarea name="content" id="content" cols="30" rows="10" class="form-control" id="exampleInputContent"></textarea> 
+                    </div>			
+                    <input type="submit" name="comment" value="Comment" class="button_comment">
+            </form>
+            <h1>Nội Dung Bình Luận</h1>
+        </div>
+    <?php while ($row = $listComment->fetch_assoc()) {
+            $content = $row['content'];
+        ?>
+        <div class="list_comment">
+            <div class="user_comment_info">
+                <p><b><?php echo $row['user'];?></b></p>
+                <img src="images/dang-nhap/user1.png" alt="user" title = "user1">
+            </div>
+            <div class="content_comment">
+                <?php echo  $content;?>
+            </div>
+        </div>
+        <?php }
+        ?> 
+        <!-- phan trang cho comment -->
+        <div class="box-footer clearfix">
+              <ul class="pagination pagination-sm no-margin pull-right">
+                <li><a href="#">&laquo;</a></li>
+                <?php for ($i = 1; $i <= $numberPage; $i++) {?>
+                  <li>
+                    <a href="index.php?action=news_detail&id=<?php echo $stt;?>&page=<?php echo $i?>"> <?php echo $i?> </a>
+                  </li>
+               <?php }?>              
+                <li><a href="#">&raquo;</a></li>
+              </ul>
+        </div>         
+</div>        
+</div> 

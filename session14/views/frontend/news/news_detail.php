@@ -27,13 +27,15 @@
 		<a href="#">Liked</a>
 		<span><?php  while ($row = $ListLike->fetch_assoc()) {
 			$id = $row['user_id'];
-			echo "so nguoi da like". $id;
+			$a = $id->num_row();
+			var_dump($a);
+			echo "so nguoi da like". $a;
 		}?>
 		</span>
 	</div>
 	<?php while ($row = $listComments->fetch_assoc()) {
 		$avatar = $row['avatar'];
-		$username = $row['name'];
+		$username = $row['user'];
 	?>
 	<div class="list_comment">
 		<div class="user_comment_info">

@@ -1,6 +1,7 @@
 <?php 
 include 'model/user.php';
 include 'model/news.php';
+include 'model/detail.php';
 include 'config/connectdb.php';
 	class Controller {
 		/*
@@ -69,6 +70,7 @@ include 'config/connectdb.php';
 					//view du lieu
 					include 'view/backend/add_news.php';
 					break;
+				//list news	
 				case 'list_news':
 				//checklogin
 					$this->checkLogin();
@@ -82,6 +84,7 @@ include 'config/connectdb.php';
 					//view du lieu
 					include 'view/backend/list_news.php';
 					break;
+				//delete news	
 				case 'delete_news':
 				//checklogin
 				$this->checkLogin();
@@ -90,6 +93,7 @@ include 'config/connectdb.php';
 					$deleteNews->DeleteNews($id);
 					header("Location:admin.php?action=list_news");
 					break;
+				//edit news	
 				case 'edit_news':
 				//checklogin
 				$this->checkLogin();
@@ -118,24 +122,47 @@ include 'config/connectdb.php';
 						$newsModel->EditNews($title,$descript,$content,$news_categories_id,$images,$url,$id);
 						header("Location:admin.php?action=list_news");
 					}
-					//view du lieu
+					//view du lieu edit
 					include 'view/backend/edit_news.php';
 					break;
+						//add detail
+				case 'add_detail':
+					if (isset($_POST['add_detail'])) {
+						$url="images/player/".$_FILES['images']['name'];
+						$images=$_FILES['images']['name'];
+						move_uploaded_file($images,$url);
+						$name     = $_POST['name'];
+						$location = $_POST['location'];
+						$content  = $_POST['content'];
+						$detail   = new Detail();
+						$detail   ->InsertDetail($name,$location,$content,$images,$url);
+						header("Location:admin.php?action=list_detail");
+					}
+					//view dữ liệu
+					include 'view/backend/add_detail.php';
+					break;
+				case 'list_detail':
+					$detail = new Detail();
+					$ListDetail = $detail->ListDetail();
+					//view dữ liệu
+					include 'view/backend/list_detail.php';
+					break;	
+				//text login	
 				case 'login':
 				//view du lieu
-				if (isset($_POST['login'])) {
-					$username = $_POST['username'];
-					$password = $_POST['password'];
-					$userModel = new User();
-					$checkLogin = $userModel->checkLogin($username, $password);
-					if($checkLogin) {
-						$_SESSION['login'] = $username;
-						header("Location: admin.php?action=list_news");
-					} else {
-						header("Location:login.php");
+					if (isset($_POST['login'])) {
+						$username = $_POST['username'];
+						$password = $_POST['password'];
+						$userModel = new User();
+						$checkLogin = $userModel->checklogin($username, $password);
+						if($checkLogin) {
+							$_SESSION['login'] = $username;
+							header("Location: admin.php?action=list_news");
+						} else {
+							header("Location:login.php");
+						}
 					}
-				}
-				break;
+						break;	
 				default:
 					# code...
 					break;
