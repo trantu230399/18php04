@@ -71,6 +71,11 @@
 			$result = mysqli_query($this->conn, $sql);
 			return $result;
 		}
+		function RelateNews($news_categories_id){
+			$sql = "SELECT * FROM news WHERE news_categories_id= '$news_categories_id' LIMIT 5 ";
+			$result = mysqli_query($this->conn, $sql);
+			return $result;
+		}		
 	}
 
 	

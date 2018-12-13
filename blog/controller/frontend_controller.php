@@ -30,12 +30,23 @@
 				//show tin tuc
 				$id = $_REQUEST['id'];
 				$detail = new News();
+				//show detail
 				$listDetail = $detail->GetDetail($id);
-				$comment = new Comment();
+				$test       = $detail->GetDetail($id);
+				$comment    = new Comment();
+				//list comment
 				$listComment = $comment->ListComment($id,$limit,$page);
+				// lay tat ca cac id tuong ung voi comment
 				$totalComment = $comment->getTotalComment($id);
 				$numberPage = ceil($totalComment/$limit);
+				if($listDetail){
+					while($row=$test->fetch_assoc()){
+						$news_categories_id = $row['news_categories_id'];
+						}
+				}
+				$ListRelate = $detail->RelateNews($news_categories_id);
 				include 'view/frontend/detail.php';
+				
 				break;
 				//phan comment
 			case 'news_comment':	

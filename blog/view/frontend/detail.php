@@ -1,3 +1,36 @@
+<style>
+.cap h4{
+    color:red;
+    font-size:25px;
+}
+   .newsref {
+    border-left: solid 2px #eee;
+    float:right;
+    margin-top:120px;
+    margin-right:180px;
+    width:250px;
+}
+.lst a {
+    color: #222;
+    outline: none;
+    font-size: 20px;
+    text-decoration: none;
+}
+</style>
+<div class='newsref'>
+    <div class='cap'>
+        <h4>Cùng Chuyên mục</h4>
+    </div>
+        <?php while($row=$ListRelate->fetch_assoc()){ 
+                $id = $row['id'];
+                $title = $row['title']
+        ?>
+    <ul class="lst">
+        <li class="fst"><a href="index.php?action=news_detail&id=<?php echo $id;?>"><?php echo $title;?></a></li>
+    </ul>
+        <?php
+        } ?>
+</div>
 <div class="grlf" id="NewsDisplayZone">
 <?php 
 while ($row =$listDetail->fetch_assoc()){
@@ -9,6 +42,7 @@ while ($row =$listDetail->fetch_assoc()){
     $url=$row['url'];
     $created=$row['created'];
     $name = $row['name'];
+    $news_categories_id = $row['news_categories_id'];
     ?>
     <div class="breakcrum lft">
         <a href="index.php?action=home&category_id='<?php echo $id?>'"><b><?php echo $name;?></b></a>
@@ -73,3 +107,4 @@ while ($row =$listDetail->fetch_assoc()){
         </div>         
 </div>        
 </div> 
+
