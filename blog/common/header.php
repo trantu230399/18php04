@@ -57,7 +57,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo $_SESSION['url'];?>" class="user-image" alt="User Image">
+              <img src="images/friend/tvat.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs"><?php echo $_SESSION['login'];?></span>
             </a>
             <ul class="dropdown-menu">

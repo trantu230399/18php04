@@ -21,16 +21,15 @@
   <div class="wrap">
     <ul class="megamenu skyblue">
         <li><a class="color1" href="index.php?action=home">Home</a></li>
-        <li><a class="color2" href="index.php?action=home&category_id=1">Premier League</a></li>
-        <li><a class="color3" href="index.php?action=home&category_id=2">Bundesliga</a></li>
-        <li><a class="color4" href="index.php?action=home&category_id=3">Laliga</a></li>
-        <li><a class="color5" href="index.php?action=home&category_id=4">Seria</a></li>
-        <li><a class="color6" href="index.php?action=home&category_id=5">V-league</a></li>
-        <li><a class="color7" href="index.php?action=home&category_id=6">League-1</a></li>
-        <li><a class="color8" href="index.php?action=home&category_id=7">Champion League</a></li>
-        <li><a class="color8" href="index.php?action=list_clb">Thông Tin Cầu Thủ</a></li>
-
-        
+        <li><a class="color2" href="index.php?action=category&id=1">Premier League</a></li>
+        <li><a class="color3" href="index.php?action=category&id=2">Bundesliga</a></li>
+        <li><a class="color4" href="index.php?action=category&id=3">Laliga</a></li>
+        <li><a class="color5" href="index.php?action=category&id=4">Seria</a></li>
+        <li><a class="color6" href="index.php?action=category&id=5">V-league</a></li>
+        <li><a class="color7" href="index.php?action=category&id=6">League-1</a></li>
+        <li><a class="color8" href="index.php?action=category&id=7">Champion League</a></li>
+        <li><a class="color8" href="index.php?action=nation">Thông Tin Cầu Thủ</a></li>
+        <li><a class="color1" href="index.php?action=video">Video</a></li>  
     </ul>
   </div>
  </div> 

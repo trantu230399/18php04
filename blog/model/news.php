@@ -19,14 +19,15 @@
 			return $result;
 		}
 		//Show tin tức trong phần index
-		function GetListNews($category_id,$page,$limit){
+		function GetListNews($page,$limit){
 			$start = ($page-1)*$limit;
-			if ($category_id != ''){
-				$sql = "SELECT news.id AS stt,news.title,news.decription,news.content,news.images,news.url,news.news_categories_id,news_categories.id,news_categories.name FROM news INNER JOIN news_categories on news.news_categories_id = news_categories.id WHERE news_categories.id = '$category_id' LIMIT $start,$limit";
-			} else {
-				$sql = "SELECT news.id AS stt,news.title,news.decription,news.content,news.images,news.url,news.news_categories_id,news_categories.id,news_categories.name FROM news INNER JOIN news_categories on news.news_categories_id = news_categories.id LIMIT $start,$limit ";
-			}
-			
+			$sql = "SELECT news.id AS stt,news.title,news.decription,news.content,news.images,news.url,news.news_categories_id,news_categories.id,news_categories.name FROM news INNER JOIN news_categories on news.news_categories_id = news_categories.id LIMIT $start,$limit ";
+			$result = mysqli_query($this->conn, $sql);
+			return $result;
+		}
+		function ListCategory($id,$page,$limit){
+			$start = ($page-1)*$limit;
+			$sql = "SELECT news.id AS stt,news.title,news.decription,news.content,news.images,news.url,news.news_categories_id,news_categories.id,news_categories.name FROM news INNER JOIN news_categories on news.news_categories_id = news_categories.id WHERE news_categories.id = '$id' LIMIT $start,$limit ";
 			$result = mysqli_query($this->conn, $sql);
 			return $result;
 		}
@@ -65,14 +66,20 @@
 			$result = mysqli_query($this->conn, $sql);
 			return $result->num_rows;
 		}
+		// lay id phan category
+		function CategoryNews($id){
+			$sql = "SELECT id FROM news where news_categories_id = '$id'";
+			$result = mysqli_query($this->conn, $sql);
+			return $result->num_rows;
+		}
 		// Detail trong index
 		function GetDetail($id){
 			$sql = "SELECT news.id AS stt,news.created,news.title,news.decription,news.content,news.images,news.url,news.news_categories_id,news_categories.id,news_categories.name FROM news INNER JOIN news_categories on news.news_categories_id = news_categories.id WHERE news.id = '$id' ";
 			$result = mysqli_query($this->conn, $sql);
 			return $result;
 		}
-		function RelateNews($news_categories_id){
-			$sql = "SELECT * FROM news WHERE news_categories_id= '$news_categories_id' LIMIT 5 ";
+		function RelateNews($news_categories_id,$id){
+			$sql = "SELECT * FROM news WHERE news_categories_id= '$news_categories_id' AND id != '$id' ORDER BY created DESC LIMIT 5";
 			$result = mysqli_query($this->conn, $sql);
 			return $result;
 		}		

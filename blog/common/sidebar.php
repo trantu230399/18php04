@@ -4,7 +4,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?php echo $_SESSION['url'];?>" class="img-circle" alt="User Image">
+          <img src="images/friend/tvat.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?php echo $_SESSION['login'];?></p>
@@ -38,7 +38,7 @@
             <li class="active"><a href="admin.php?action=list_user"><i class="fa fa-circle-o"></i> List users</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="active treeview menu-open">
           <a href="#">
             <i class="fa  fa-cubes"></i><span>News</span>
             <span class="pull-right-container">
@@ -50,7 +50,7 @@
             <li><a href="admin.php?action=list_news"><i class="fa fa-circle-o"></i> List News</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="active treeview menu-open">
           <a href="#">
             <i class="fa fa-table"></i><span>Thông Tin CLB</span>
             <span class="pull-right-container">
@@ -60,6 +60,18 @@
           <ul class="treeview-menu">
             <li><a href="admin.php?action=add_detail"><i class="fa fa-circle-o"></i>ADD DETAIL</a></li>
             <li><a href="admin.php?action=list_detail"><i class="fa fa-circle-o"></i>SHOW DETAIL</a></li>
+          </ul>
+        </li>
+        <li class="active treeview menu-open">
+          <a href="#">
+            <i class="fa fa-users"></i> <span>Video</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="admin.php?action=add_video"><i class="fa fa-circle-o"></i> Add Video</a></li>
+            <li class="active"><a href="admin.php?action=list_video"><i class="fa fa-circle-o"></i> List Video</a></li>
           </ul>
         </li>
       </ul>

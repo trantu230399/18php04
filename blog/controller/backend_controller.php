@@ -2,6 +2,7 @@
 include 'model/user.php';
 include 'model/news.php';
 include 'model/detail.php';
+include 'model/video.php';
 include 'config/connectdb.php';
 	class Controller {
 		/*
@@ -54,7 +55,7 @@ include 'config/connectdb.php';
 						$category = $newsModel->getListCategory();
 						if(isset($_POST['add_news'])){
 						//lay du lieu form
-						$url="images/".$_FILES['images']['name'];
+						$url="images/news/".$_FILES['images']['name'];
 						$images=$_FILES['images']['name'];
 						move_uploaded_file($images,$url);
 						// lay du lieu ti form	
@@ -127,6 +128,7 @@ include 'config/connectdb.php';
 					break;
 						//add detail
 				case 'add_detail':
+					$this->checkLogin();
 					if (isset($_POST['add_detail'])) {
 						$url="images/player/".$_FILES['images']['name'];
 						$images=$_FILES['images']['name'];
@@ -142,10 +144,31 @@ include 'config/connectdb.php';
 					include 'view/backend/add_detail.php';
 					break;
 				case 'list_detail':
+					$this->checkLogin();
 					$detail = new Detail();
 					$ListDetail = $detail->ListDetail();
 					//view dữ liệu
 					include 'view/backend/list_detail.php';
+					break;	
+				case 'add_video':
+					$this->checkLogin();
+					if(isset($_POST['add_video'])){
+						$url="images/video/".$_FILES['videos']['name'];
+						$video=$_FILES['videos']['name'];
+						move_uploaded_file($images,$url);
+						$title = $_POST['title'];
+						$content = $_POST['content'];
+						$Insertvideo   = new Video();
+						$Insertvideo   ->InsertVideo($title,$content,$video,$url);
+						header("Location:admin.php?action=list_video");
+					}
+					include 'view/backend/add_video.php';
+					break;	
+				case 'list_video':
+					$this->checkLogin();
+					$video = new Video();
+					$ListVideo = $video->ListVideo();
+					include "view/backend/list_video.php";
 					break;	
 				//text login	
 				case 'login':

@@ -10,6 +10,9 @@
     margin-right:180px;
     width:250px;
 }
+.lst{
+    border-bottom: solid 2px #eee;
+}
 .lst a {
     color: #222;
     outline: none;
@@ -105,6 +108,6 @@ while ($row =$listDetail->fetch_assoc()){
                 <li><a href="#">&raquo;</a></li>
               </ul>
         </div>         
-</div>        
+</div>   
 </div> 
 

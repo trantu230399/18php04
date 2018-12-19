@@ -1,0 +1,44 @@
+.stbl {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.st-rs {
+    padding: 0px;
+    margin: 0px;
+    width: 24px;
+}
+.st-nc {
+    text-align: left;
+}
+div {
+    display: block;
+}
+.str-rs-cl {
+    margin: 0px;
+    padding: 0px;
+}
+.str-rc {
+    text-align: center;
+    padding-right: 8px;
+}
+.str-dc {
+    border-bottom: 1px solid #DFE1E5;
+    color: rgba(0,0,0,.87);
+    font-size: 14px;
+    line-height: 14px;
+    height: 40px;
+    padding: 0;
+    vertical-align: middle;
+}

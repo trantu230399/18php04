@@ -19,7 +19,7 @@
 			$sql = "SELECT * FROM news_user WHERE username = '$username'
 			AND password = '$password'";
 			$result = mysqli_query($this->conn, $sql);
-			return $result->num_rows;
+			return $result;
         }
         function getTotalComment($id){
             $sql = "SELECT content FROM comments WHERE news_id = '$id' ";
