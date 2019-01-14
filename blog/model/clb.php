@@ -6,14 +6,17 @@
 			$this->conn = $connect->connect();
         }
         function ListCLB($id){
-            if($id == 1){
+            switch($id) {
+                case '1':
                 $sql = "SELECT * FROM premier_league ORDER BY point DESC";
                 $result = mysqli_query($this->conn, $sql);
                 return $result;
-            }else{
-                $sql = "SELECT * FROM laliga";
+                  break;
+                case '2':
+                $sql = "SELECT * FROM laliga ORDER BY point DESC";
                 $result = mysqli_query($this->conn, $sql);
                 return $result;
-            }    
+                  break;
+              }
         }
     }

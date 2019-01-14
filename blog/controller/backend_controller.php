@@ -3,6 +3,7 @@ include 'model/user.php';
 include 'model/news.php';
 include 'model/detail.php';
 include 'model/video.php';
+include 'model/tournaments.php';
 include 'config/connectdb.php';
 	class Controller {
 		/*
@@ -136,9 +137,12 @@ include 'config/connectdb.php';
 						$name     = $_POST['name'];
 						$location = $_POST['location'];
 						$content  = $_POST['content'];
+						$number   = $_POST['number'];	
+						$tournaments = $_POST['tournaments'];
+						$team	  = $_POST['team'];
 						$detail   = new Detail();
-						$detail   ->InsertDetail($name,$location,$content,$images,$url);
-						header("Location:admin.php?action=list_detail");
+						$detail   ->InsertDetail($name,$location,$content,$images,$url,$number,$tournaments,$team);
+						// header("Location:admin.php?action=list_detail");
 					}
 					//view dữ liệu
 					include 'view/backend/add_detail.php';
@@ -169,8 +173,24 @@ include 'config/connectdb.php';
 					$video = new Video();
 					$ListVideo = $video->ListVideo();
 					include "view/backend/list_video.php";
-					break;	
-				//text login	
+					break;
+					//priemier league	
+				case 'premier_league':
+					break;
+					//laliga
+				case 'laliga':
+					if(isset($_POST['laliga'])){
+						$images="images/laliga/".$_FILES['images']['name'];
+						move_uploaded_file($images);
+						$name = $_POST['name'];
+						$number = $_POST['number'];
+						$point = $_POST['point'];
+						$Laliga = new Tournaments();
+						$Laliga ->InsertLaliga($name,$number,$point,$images);
+					}
+					include "view/backend/tournaments_laliga.php";
+					break;		
+				// login	
 				case 'login':
 				//view du lieu
 					if (isset($_POST['login'])) {

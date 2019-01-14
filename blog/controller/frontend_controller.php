@@ -4,6 +4,7 @@
 	include 'model/news.php';
 	include 'model/video.php';
 	include 'model/clb.php';
+	include 'model/detail.php';
 	include 'model/comment.php';
 	class FrontendController {
 		function handleRequest(){
@@ -108,6 +109,13 @@
 				$clb = new CLB();
 				$list_clb = $clb->ListCLB($id);
 				include 'view/frontend/list_clb.php';
+				break;	
+			case 'list_players':
+				$premier_league_id = $_GET['premier_league_id'];
+				$tournaments_name = $_GET['tournaments_name'];
+				$detail = new Detail();
+				$ListPlayers = $detail->ListPlayers($premier_league_id,$tournaments_name);
+				include "view/frontend/list_players.php";
 				break;		
 			default:
 					# code...

@@ -26,6 +26,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
+        <!-- User -->
         <li class="active treeview menu-open">
           <a href="#">
             <i class="fa fa-users"></i> <span>Users</span>
@@ -38,6 +39,7 @@
             <li class="active"><a href="admin.php?action=list_user"><i class="fa fa-circle-o"></i> List users</a></li>
           </ul>
         </li>
+        <!-- News -->
         <li class="active treeview menu-open">
           <a href="#">
             <i class="fa  fa-cubes"></i><span>News</span>
@@ -50,6 +52,7 @@
             <li><a href="admin.php?action=list_news"><i class="fa fa-circle-o"></i> List News</a></li>
           </ul>
         </li>
+        <!-- CLB -->
         <li class="active treeview menu-open">
           <a href="#">
             <i class="fa fa-table"></i><span>Thông Tin CLB</span>
@@ -62,6 +65,20 @@
             <li><a href="admin.php?action=list_detail"><i class="fa fa-circle-o"></i>SHOW DETAIL</a></li>
           </ul>
         </li>
+        <!-- Tournaments -->
+        <li class="active treeview menu-open">
+          <a href="#">
+            <i class="fa fa-table"></i><span>Tournaments</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="admin.php?action=premier_league"><i class="fa fa-circle-o"></i>Premier League</a></li>
+            <li><a href="admin.php?action=laliga"><i class="fa fa-circle-o"></i>Laliga</a></li>
+          </ul>
+        </li>
+        <!-- Video -->
         <li class="active treeview menu-open">
           <a href="#">
             <i class="fa fa-users"></i> <span>Video</span>

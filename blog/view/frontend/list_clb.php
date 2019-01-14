@@ -93,6 +93,7 @@ div {
                 $images = $row['images'];
                 $number = $row['number_of_matches'];
                 $point = $row['point'];
+                $id_clb    = $row['id'];
                 ?>
           
             <tr>
@@ -107,7 +108,7 @@ div {
                 <td class="str-dc str-nhnc">
                     <div class="imso-hide-overflow str-tdc">
                         <span class="str-l"><img src="<?php echo $images;?>" alt style="height:30px;width:30px"></span>
-                        <span class="str-tnwl ellipsisize"><?php echo $name;?></span>
+                        <span class="str-tnwl ellipsisize"><a href="index.php?action=list_players&premier_league_id=<?php echo $id_clb;?>&tournaments_name=<?php echo $id;?>" target="_blank" style="color:black;"><?php echo $name;?></a></span>
                     </div>
                 </td> 
                 <td class="str-dc str-nhnc"><?php echo $number;?></td>
