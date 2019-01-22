@@ -164,11 +164,10 @@
 							$_SESSION['login'] = $username;
 							$_SESSION['role']  = $checkLogin;
 							header("Location: admin.php?action=list_user");
-						} else {
+						}else{
 							header("Location: login.php");
 						}
 					}
-					
 					break;
 				case 'logout':
 					unset($_SESSION['login']);

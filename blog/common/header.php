@@ -64,8 +64,7 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
+              <img src="images/friend/tvat.jpg" class="img-circle" alt="User Image">
                 <p>
                 <?php echo $_SESSION['login'];?>
                   <small>Member since Nov. 2012</small>
@@ -92,7 +91,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="login.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

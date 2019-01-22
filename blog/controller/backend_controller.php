@@ -15,7 +15,9 @@ include 'config/connectdb.php';
 			switch ($action) {
 				case 'add_user':			
 					//check login
-					$this->checkLogin();
+					if(!isset($_SESSION['login'])|| $_SESSION['role'] != 'admin'){
+						header("Location: login.php");
+					}
 					//
 					if(isset($_POST['add_user'])){
 						//upload images
@@ -200,7 +202,8 @@ include 'config/connectdb.php';
 						$checkLogin = $userModel->checklogin($username, $password);
 						if($checkLogin) {
 							$_SESSION['login'] = $username;
-							header("Location: admin.php?action=list_news");
+							$_SESSION['role'] = $checkLogin;
+ 							header("Location: admin.php?action=list_news");
 						} else {
 							header("Location:login.php");
 						}

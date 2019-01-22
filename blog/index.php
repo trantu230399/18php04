@@ -33,11 +33,11 @@
         <li><a class="color1" href="index.php?action=video">Video</a></li>  
     </ul>
   </div>
- </div> 
+ </div>
+ 
 	<?php 
       $controller = new FrontendController();
       $controller->handleRequest();
     ?>
-    
 </body>
 </html>

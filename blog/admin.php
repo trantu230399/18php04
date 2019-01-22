@@ -5,6 +5,7 @@ session_start();
   <!-- Left side column. contains the logo and sidebar -->
  
   <?php include 'common/sidebar.php';?>
+  
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->

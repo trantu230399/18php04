@@ -24,8 +24,12 @@
 			$sql = "SELECT * FROM users WHERE username = '$username'
 			AND password = '$password'";
 			$result = mysqli_query($this->conn, $sql);
-			return $result;
+			$role = '';
+			while ($row = $result->fetch_assoc()) {
+				$role = $row['role'];
+			}
+			return $result->num_rows;
+			return $role;
 		}
-		
 	}
 ?>
